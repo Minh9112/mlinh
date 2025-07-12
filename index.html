@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Gửi cho người đặc biệt</title>
+  <meta charset="UTF-8" />
+  <title>Messenger</title>
   <style>
     body {
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-      flex-direction: column;
-      color: #fff;
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
       text-align: center;
-      overflow: hidden;
+      color: #d6336c;
     }
 
     h1 {
-      font-size: 3rem;
-      animation: pulse 2s infinite;
+      margin-top: 40px;
+      font-size: 28px;
     }
 
     p {
-      font-size: 1.2rem;
-      max-width: 80%;
+      font-style: italic;
+      color: #b30059;
+      margin-top: -10px;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+    img {
+      width: 250px;
+      margin: 20px 0;
     }
 
-    .heart {
-      color: red;
-      font-size: 3rem;
-      animation: beat 1s infinite;
+    .buttons {
+      margin-top: 20px;
     }
 
-    @keyframes beat {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1); }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #noBtn {
+      background-color: #f08080;
+      color: white;
+      position: relative;
+    }
+
+    #yesBtn {
+      background-color: #fff;
+      border: 2px solid #f08080;
+      color: #f08080;
+    }
+
+    #noBtn:hover {
+      background-color: #ff4d4d;
+    }
+
+    #yesBtn:hover {
+      background-color: #f08080;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>💌 Gửi cho cậu nè</h1>
-    <p>Mỗi ngày trôi qua đều đặc biệt hơn vì có cậu 🥰</p>
-    <div class="heart">❤️</div>
+  <h1>Ngoài anh ra em còn ai khác khôngg?</h1>
+  <p>Em mà không chọn mà thoát ra thì đừng nhìn mặt anh nữa 😌</p>
+  <img src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" alt="gif" />
+  
+  <div class="buttons">
+    <button id="noBtn">Có nhiều lắm</button>
+    <button id="yesBtn" onclick="alert('Yêu em nhiều lắm ❤️')">Chỉ có anh</button>
   </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const i = Math.floor(Math.random() * 300);
+      const j = Math.floor(Math.random() * 300);
+      noBtn.style.position = 'absolute';
+      noBtn.style.top = `${i}px`;
+      noBtn.style.left = `${j}px`;
+    });
+  </script>
 </body>
 </html>
