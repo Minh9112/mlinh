@@ -10,22 +10,26 @@
       font-family: Arial, sans-serif;
       text-align: center;
       color: #d6336c;
+      overflow: hidden;
     }
 
     h1 {
       margin-top: 40px;
-      font-size: 28px;
+      font-size: 26px;
+      font-weight: bold;
     }
 
     p {
       font-style: italic;
       color: #b30059;
       margin-top: -10px;
+      font-size: 16px;
     }
 
-    img {
+    .cat {
       width: 250px;
-      margin: 20px 0;
+      margin: 20px auto;
+      display: block;
     }
 
     .buttons {
@@ -36,53 +40,60 @@
       padding: 10px 20px;
       margin: 10px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
-    }
-
-    #noBtn {
-      background-color: #f08080;
-      color: white;
       position: relative;
     }
 
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+    }
+
     #yesBtn {
-      background-color: #fff;
-      border: 2px solid #f08080;
-      color: #f08080;
+      background-color: white;
+      color: #f44336;
+      border: 2px solid #f44336;
     }
 
     #noBtn:hover {
-      background-color: #ff4d4d;
+      background-color: #d32f2f;
     }
 
     #yesBtn:hover {
-      background-color: #f08080;
+      background-color: #f44336;
       color: white;
     }
   </style>
 </head>
 <body>
-  <h1>Ngoài anh ra em còn ai khác khôngg?</h1>
+  <h1>Ngoài anh ra em còn ai khác khônggg?</h1>
   <p>Em mà không chọn mà thoát ra thì đừng nhìn mặt anh nữa 😌</p>
-  <img src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" alt="gif" />
-  
+
+  <!-- Ảnh mèo xanh cute -->
+  <img class="cat" src="https://i.imgur.com/JvPeq2c.png" alt="cute cat" />
+
   <div class="buttons">
     <button id="noBtn">Có nhiều lắm</button>
-    <button id="yesBtn" onclick="alert('Yêu em nhiều lắm ❤️')">Chỉ có anh</button>
+    <button id="yesBtn" onclick="alert('Yêu anh nhiều lắmmmmm ❤️')">Chỉ có anh</button>
   </div>
 
   <script>
     const noBtn = document.getElementById('noBtn');
+    const body = document.body;
 
     noBtn.addEventListener('mouseover', () => {
-      const i = Math.floor(Math.random() * 300);
-      const j = Math.floor(Math.random() * 300);
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      const randX = Math.floor(Math.random() * maxX);
+      const randY = Math.floor(Math.random() * maxY);
+
       noBtn.style.position = 'absolute';
-      noBtn.style.top = `${i}px`;
-      noBtn.style.left = `${j}px`;
+      noBtn.style.left = randX + 'px';
+      noBtn.style.top = randY + 'px';
     });
   </script>
 </body>
