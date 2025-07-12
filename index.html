@@ -6,11 +6,12 @@
   <style>
     body {
       margin: 0;
-      background-color: #ffe6f0;
+      background-color: #ffe6f0; /* Nền hồng nhẹ */
       font-family: Arial, sans-serif;
       text-align: center;
       color: #d6336c;
       overflow: hidden;
+      height: 100vh;
     }
 
     h1 {
@@ -34,6 +35,8 @@
 
     .buttons {
       margin-top: 20px;
+      position: relative;
+      height: 100px;
     }
 
     button {
@@ -44,12 +47,12 @@
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
-      position: relative;
     }
 
     #noBtn {
       background-color: #f44336;
       color: white;
+      position: absolute;
     }
 
     #yesBtn {
@@ -77,23 +80,22 @@
 
   <div class="buttons">
     <button id="noBtn">Có nhiều lắm</button>
-    <button id="yesBtn" onclick="alert('Yêu anh nhiều lắmmmmm ❤️')">Chỉ có anh</button>
+    <button id="yesBtn" onclick="alert('Yêu anh nhiều lắm luôn á 😘')">Chỉ có anh</button>
   </div>
 
   <script>
     const noBtn = document.getElementById('noBtn');
-    const body = document.body;
 
+    // Giới hạn vị trí chạy trong khung (không văng ra ngoài)
     noBtn.addEventListener('mouseover', () => {
-      const maxX = window.innerWidth - noBtn.offsetWidth;
-      const maxY = window.innerHeight - noBtn.offsetHeight;
+      const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 20;
 
       const randX = Math.floor(Math.random() * maxX);
       const randY = Math.floor(Math.random() * maxY);
 
-      noBtn.style.position = 'absolute';
-      noBtn.style.left = randX + 'px';
-      noBtn.style.top = randY + 'px';
+      noBtn.style.left = `${randX}px`;
+      noBtn.style.top = `${randY}px`;
     });
   </script>
 </body>
