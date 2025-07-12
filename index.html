@@ -111,135 +111,11 @@
 
   <!-- Custom popup -->
   <div id="popup">
-    <strong></strong> buồn đó nha!</strong><br>
+    <strong>😢 câu trả  lời!</strong><br>
     <button onclick="closePopup()">Đóng</button>
   </div>
 
   <script>
-    // Xử lý nút chạy
-    const yesBtn = document.getElementById('yesBtn');
-    let posX = window.innerWidth / 2;
-    let posY = 30;
-
-    yesBtn.<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <title>Messenger Troll</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #ffe6f0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      color: #d6336c;
-      overflow: hidden;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    h1 {
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    p {
-      font-style: italic;
-      color: #b30059;
-      margin-top: -10px;
-      font-size: 16px;
-    }
-
-    .buttons {
-      margin-top: 30px;
-      position: relative;
-      height: 120px;
-      width: 100%;
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      position: absolute;
-    }
-
-    #yesBtn {
-      background-color: #f44336;
-      color: white;
-      left: 50%;
-      top: 30px;
-      transform: translateX(-50%);
-    }
-
-    #noBtn {
-      background-color: white;
-      color: #f44336;
-      border: 2px solid #f44336;
-      left: 50%;
-      top: 80px;
-      transform: translateX(-50%);
-    }
-
-    #yesBtn:hover {
-      background-color: #d32f2f;
-    }
-
-    #noBtn:hover {
-      background-color: #f44336;
-      color: white;
-    }
-
-    /* Popup custom */
-    #popup {
-      display: none;
-      background-color: white;
-      color: #d6336c;
-      border: 2px solid #d6336c;
-      padding: 20px;
-      border-radius: 12px;
-      position: fixed;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1000;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #popup button {
-      margin-top: 15px;
-      background-color: #d6336c;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>Ngoài anh ra em còn ai khác khônggg?</h1>
-  <p>Em mà không chọn mà thoát ra thì đừng nhìn mặt anh nữa 😌</p>
-
-  <div class="buttons">
-    <button id="yesBtn">Chỉ có anh</button>
-    <button id="noBtn" onclick="showPopup()">Có nhiều lắm</button>
-  </div>
-
-  <!-- Custom popup -->
-  <div id="popup">
-    <strong>😢 câu trả lời !</strong><br>
-    <button onclick="closePopup()">Đóng</button>
-  </div>
-
-  <script>
-    // Xử lý nút chạy
     const yesBtn = document.getElementById('yesBtn');
     let posX = window.innerWidth / 2;
     let posY = 30;
@@ -263,42 +139,10 @@
       yesBtn.style.transform = 'translateX(0)';
     });
 
-    // Hiện popup
     function showPopup() {
       document.getElementById('popup').style.display = 'block';
     }
 
-    // Ẩn popup
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-    }
-  </script>
-</body>
-</html>('mouseover', () => {
-      const step = 80;
-      const offsetX = (Math.random() > 0.5 ? 1 : -1) * step;
-      const offsetY = (Math.random() > 0.5 ? 1 : -1) * step;
-
-      posX += offsetX;
-      posY += offsetY;
-
-      const maxX = window.innerWidth - yesBtn.offsetWidth - 10;
-      const maxY = window.innerHeight - yesBtn.offsetHeight - 10;
-
-      posX = Math.max(10, Math.min(posX, maxX));
-      posY = Math.max(10, Math.min(posY, maxY));
-
-      yesBtn.style.left = `${posX}px`;
-      yesBtn.style.top = `${posY}px`;
-      yesBtn.style.transform = 'translateX(0)';
-    });
-
-    // Hiện popup
-    function showPopup() {
-      document.getElementById('popup').style.display = 'block';
-    }
-
-    // Ẩn popup
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
     }
